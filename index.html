@@ -1,97 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sekiro: Shadows Die Twice - Completion Tracker</title>
-    <style>
-        :root {
-            --bg-colour: #121212;
-            --text-colour: #e0e0e0;
-            --accent-colour: #b71c1c; 
-            --checked-bg: #1e1e1e;
-            --checked-text: #757575;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-colour);
-            color: var(--text-colour);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        header {
-            text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--accent-colour);
-            margin-bottom: 20px;
-        }
-        h1 { margin: 0; font-size: 2em; }
-        .progress-container {
-            background-color: #333;
-            border-radius: 5px;
-            margin: 15px 0;
-            overflow: hidden;
-            width: 100%;
-        }
-        .progress-bar {
-            height: 10px;
-            background-color: var(--accent-colour);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        .checklist-item {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .checklist-item:hover { background-color: #252525; }
-        .checklist-item input[type="checkbox"] {
-            margin-top: 5px;
-            margin-right: 15px;
-            transform: scale(1.5);
-            accent-color: var(--accent-colour);
-            cursor: pointer;
-        }
-        .checklist-item.checked {
-            background-color: var(--checked-bg);
-            color: var(--checked-text);
-            border-color: #2a2a2a;
-        }
-        .checklist-item.checked .chunk-text {
-            color: var(--checked-text);
-            text-decoration: line-through;
-        }
-        .chunk-text { 
-            flex: 1; 
-            white-space: pre-wrap; /* Preserves your specific formatting and line breaks */
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sekiro Tracker">
+<meta name="theme-color" content="#0a0a0a">
+<title>Sekiro: Shadows Die Twice - Platinum Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface-hover:#1c1c1c;--border:#222;--text:#d4d0c8;--text-dim:#5a5650;--text-checked:#3a3835;--accent:#8b1a1a;--accent-bright:#c62828;--accent-glow:rgba(198,40,40,0.15);--achievement:#b8860b;--achievement-dim:#5c4306}*{box-sizing:border-box;margin:0;padding:0}body{font-family:"DM Sans",-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh;-webkit-text-size-adjust:100%;padding-top:env(safe-area-inset-top)}header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 16px 12px}.hi{max-width:860px;margin:0 auto}.tr{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}h1{font-family:"Noto Serif JP",serif;font-weight:900;font-size:1.15em;letter-spacing:0.02em}h1 span{color:var(--accent-bright)}.hc{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.btn{font-family:"DM Sans",sans-serif;font-size:0.72em;font-weight:600;padding:6px 12px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text-dim);cursor:pointer;transition:all 0.15s ease;white-space:nowrap;-webkit-tap-highlight-color:transparent}.btn:hover,.btn:active{background:var(--surface-hover);color:var(--text);border-color:#333}.btn-a{border-color:var(--accent);color:var(--accent-bright)}.btn-a:hover,.btn-a:active{background:var(--accent-glow);border-color:var(--accent-bright)}.pr{display:flex;align-items:center;gap:12px;margin-top:10px}.pt{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}.pf{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));width:0%;transition:width 0.4s ease;border-radius:3px}.pl{font-size:0.78em;font-weight:600;color:var(--text-dim);min-width:100px;text-align:right;font-variant-numeric:tabular-nums}main{max-width:860px;margin:0 auto;padding:16px 16px 80px}.sec{margin-bottom:10px;border:1px solid var(--border);border-radius:6px;overflow:hidden;background:#0f0f0f}.sh{display:flex;align-items:center;padding:13px 14px;cursor:pointer;user-select:none;gap:10px;transition:background 0.15s ease;-webkit-tap-highlight-color:transparent}.sh:hover{background:var(--surface-hover)}.st{font-size:0.7em;color:var(--text-dim);transition:transform 0.25s ease;flex-shrink:0;width:16px;text-align:center}.sec.c .st{transform:rotate(-90deg)}.sn{font-family:"Noto Serif JP",serif;font-weight:700;font-size:0.92em;flex:1}.sp{font-size:0.73em;font-weight:600;color:var(--text-dim);font-variant-numeric:tabular-nums}.sp .d{color:var(--accent-bright)}.sb{overflow:hidden;transition:max-height 0.3s ease}.sec.c .sb{max-height:0 !important}.sbi{padding:4px 6px 6px}.it{display:flex;align-items:flex-start;gap:10px;padding:10px;margin-bottom:3px;border-radius:5px;cursor:pointer;transition:background 0.15s ease;border:1px solid transparent;-webkit-tap-highlight-color:transparent}.it:hover{background:var(--surface-hover);border-color:var(--border)}.it.ck{opacity:0.4}.it.ck .tx{text-decoration:line-through;text-decoration-color:var(--text-checked)}.it input[type="checkbox"]{margin-top:3px;width:20px;height:20px;min-width:20px;accent-color:var(--accent-bright);cursor:pointer}.tx{flex:1;font-size:0.88em;white-space:pre-wrap;line-height:1.6}.it.ac{border-left:3px solid var(--achievement-dim);background:rgba(184,134,11,0.03)}.it.ac:hover{background:rgba(184,134,11,0.06)}.it.ac .tx{color:var(--achievement)}.it.ac.ck .tx{color:var(--achievement-dim)}#sb{position:fixed;bottom:20px;right:20px;width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--text-dim);font-size:1.3em;cursor:pointer;display:none;align-items:center;justify-content:center;transition:all 0.15s ease;z-index:50}#sb:hover{background:var(--surface-hover);color:var(--text)}#sb.v{display:flex}.ov{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;display:none;align-items:center;justify-content:center}.ov.o{display:flex}.dl{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;max-width:340px;width:88%;text-align:center}.dl h3{font-family:"Noto Serif JP",serif;margin-bottom:8px;color:var(--accent-bright)}.dl p{font-size:0.85em;color:var(--text-dim);margin-bottom:18px}.db{display:flex;gap:8px;justify-content:center}.dl .btn{padding:8px 20px;font-size:0.8em}@media(max-width:600px){header{padding:12px 12px 10px}h1{font-size:0.95em}.btn{padding:5px 10px;font-size:0.68em}main{padding:12px 8px 60px}.it{padding:9px 7px;gap:8px}.tx{font-size:0.84em}.pl{min-width:75px;font-size:0.7em}}
+</style>
 </head>
 <body>
-
-    <header>
-        <h1>Sekiro Walkthrough Tracker</h1>
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-        <p id="progressText">0% Completed</p>
-    </header>
-
-    <main id="checklist"></main>
-
-    <script>
-        // Data strictly retained. Internal backticks have been escaped (\`) to prevent code crashes.
-        const rawWalkthroughText = `
+<header><div class="hi">
+<div class="tr">
+<h1>&#24433; <span>Sekiro</span> Tracker</h1>
+<div class="hc">
+<button class="btn btn-a" id="br">&#9654; Resume</button>
+<button class="btn" id="be">Expand</button>
+<button class="btn" id="bc">Collapse</button>
+<button class="btn" id="bx">Reset</button>
+</div>
+</div>
+<div class="pr">
+<div class="pt"><div class="pf" id="pf"></div></div>
+<div class="pl" id="pl">0%</div>
+</div>
+</div></header>
+<main id="cl"></main>
+<button id="sb">&#8593;</button>
+<div class="ov" id="ro"><div class="dl">
+<h3>Reset Progress?</h3>
+<p>This will uncheck every step. This cannot be undone.</p>
+<div class="db">
+<button class="btn" id="rc">Cancel</button>
+<button class="btn btn-a" id="ry">Reset</button>
+</div>
+</div></div>
+<script>
+const rawWalkthroughText = `
 
 Part 1: Wolf and the Divine Heir
 
@@ -1135,71 +1085,7 @@ Sekiro
 Congrats on a fine completion!
 
 `;
-
-        // Logic
-        const walkthroughChunks = rawWalkthroughText
-            .split(/\n\s*\n/) // Splits by double line breaks (paragraphs)
-            .map(chunk => chunk.trim())
-            .filter(chunk => chunk.length > 0);
-
-        const checklistContainer = document.getElementById('checklist');
-        const progressBar = document.getElementById('progressBar');
-        const progressText = document.getElementById('progressText');
-
-        let savedProgress = JSON.parse(localStorage.getItem('sekiroTrackerData')) || {};
-
-        function updateProgress() {
-            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-            const total = checkboxes.length;
-            let checkedCount = 0;
-
-            checkboxes.forEach(cb => {
-                if (cb.checked) checkedCount++;
-            });
-
-            const percentage = total === 0 ? 0 : Math.round((checkedCount / total) * 100);
-            progressBar.style.width = percentage + '%';
-            progressText.innerText = `${percentage}% Completed (${checkedCount}/${total})`;
-        }
-
-        walkthroughChunks.forEach((text, index) => {
-            const isChecked = savedProgress[index] || false;
-
-            const itemDiv = document.createElement('div');
-            itemDiv.className = `checklist-item ${isChecked ? 'checked' : ''}`;
-            
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = `chunk-${index}`;
-            checkbox.checked = isChecked;
-
-            const textSpan = document.createElement('div');
-            textSpan.className = 'chunk-text';
-            textSpan.innerText = text; 
-
-            itemDiv.addEventListener('click', (e) => {
-                if (e.target !== checkbox) {
-                    checkbox.checked = !checkbox.checked;
-                }
-                
-                if (checkbox.checked) {
-                    itemDiv.classList.add('checked');
-                    savedProgress[index] = true;
-                } else {
-                    itemDiv.classList.remove('checked');
-                    savedProgress[index] = false;
-                }
-
-                localStorage.setItem('sekiroTrackerData', JSON.stringify(savedProgress));
-                updateProgress();
-            });
-
-            itemDiv.appendChild(checkbox);
-            itemDiv.appendChild(textSpan);
-            checklistContainer.appendChild(itemDiv);
-        });
-
-        updateProgress();
-    </script>
+const SD=[["Part 1:","Part 1: Wolf and the Divine Heir"],["Part 2:","Part 2: Ashina Outskirts & Hirata Estate"],["Part 3:","Part 3: Ashina Castle"],["Part 4:","Part 4: Senpou Temple: Mt. Kongo"],["Part 5:","Part 5: Sunken Valley & Ashina Depths"],["Part 6:","Part 6: Ashina Castle Revisited"],["Part 7:","Part 7: Fountainhead Palace"],["Part 8:","Part 8: Ashina Castle Re-revisited"],["Subsequent Playthroughs","Subsequent Playthroughs"]];const AP=[/Defeated\s*"/,/Acquired\s*(the|all)\s*/,/Attained\s*the\s*"/,/Caught\s*the/,/Encountered\s*the/,/Received\s*the\s*"/,/Traveled\s*to\s*all/,/Used\s*(the\s*Mortal|Lapis)/,/Fully\s*upgraded/,/Upgraded\s*(Vitality|all\s*Prosthetic)/,/Grasped\s*the\s*inner/,/All\s*achievements\s*have/,/^\d+\s*guide/,/^Collectable\s*-/,/^Story\s*Completed/];function isA(t){return AP.some(p=>p.test(t))}const ch=rawWalkthroughText.split(/\n\s*\n/).map(c=>c.trim()).filter(c=>c.length>0);const secs=[];let cur={t:"Introduction",c:[]};ch.forEach(k=>{const m=SD.find(s=>k.startsWith(s[0]));if(m){if(cur.c.length>0)secs.push(cur);cur={t:m[1],c:[]}}else cur.c.push(k)});if(cur.c.length>0)secs.push(cur);let pr=JSON.parse(localStorage.getItem('sekiroTrackerData')||'{}');const cl=document.getElementById('cl'),pf=document.getElementById('pf'),pl=document.getElementById('pl');let gi=0;const all=[],se=[];function render(){cl.innerHTML='';gi=0;all.length=0;se.length=0;secs.forEach((s,si)=>{const sd=document.createElement('div');sd.className='sec';const hd=document.createElement('div');hd.className='sh';const tg=document.createElement('span');tg.className='st';tg.textContent='\u25BC';const nm=document.createElement('span');nm.className='sn';nm.textContent=s.t;const pg=document.createElement('span');pg.className='sp';pg.id='p'+si;hd.append(tg,nm,pg);const bd=document.createElement('div');bd.className='sb';const bi=document.createElement('div');bi.className='sbi';const sc=[];s.c.forEach(k=>{const i=gi++;const ck=!!pr[i];const ac=isA(k);const it=document.createElement('div');it.className='it'+(ck?' ck':'')+(ac?' ac':'');it.dataset.i=i;const cb=document.createElement('input');cb.type='checkbox';cb.checked=ck;const tx=document.createElement('div');tx.className='tx';tx.textContent=k;it.addEventListener('click',e=>{if(e.target!==cb)cb.checked=!cb.checked;pr[i]=cb.checked;it.classList.toggle('ck',cb.checked);localStorage.setItem('sekiroTrackerData',JSON.stringify(pr));up()});it.append(cb,tx);bi.appendChild(it);all.push({cb,it,si});sc.push(cb)});bd.appendChild(bi);hd.addEventListener('click',()=>{const c=sd.classList.toggle('c');if(!c)bd.style.maxHeight=bd.scrollHeight+'px'});sd.append(hd,bd);cl.appendChild(sd);se.push({d:sd,b:bd,s:sc,p:pg})});requestAnimationFrame(()=>se.forEach(s=>{s.b.style.maxHeight=s.b.scrollHeight+'px'}));up()}function up(){let t=all.length,c=0;all.forEach(({cb})=>{if(cb.checked)c++});const p=t===0?0:Math.round(c/t*100);pf.style.width=p+'%';pl.textContent=p+'% \u2014 '+c+'/'+t;se.forEach(s=>{let st=s.s.length,sc=0;s.s.forEach(cb=>{if(cb.checked)sc++});s.p.innerHTML=sc===st?'<span class="d">\u2713 '+st+'/'+st+'</span>':sc+'/'+st})}document.getElementById('br').addEventListener('click',()=>{const f=all.find(({cb})=>!cb.checked);if(f){const s=se[f.si];s.d.classList.remove('c');s.b.style.maxHeight=s.b.scrollHeight+'px';setTimeout(()=>{f.it.scrollIntoView({behavior:'smooth',block:'center'});f.it.style.outline='2px solid var(--accent-bright)';setTimeout(()=>f.it.style.outline='',2000)},150)}});document.getElementById('be').addEventListener('click',()=>se.forEach(s=>{s.d.classList.remove('c');s.b.style.maxHeight=s.b.scrollHeight+'px'}));document.getElementById('bc').addEventListener('click',()=>se.forEach(s=>s.d.classList.add('c')));document.getElementById('bx').addEventListener('click',()=>document.getElementById('ro').classList.add('o'));document.getElementById('rc').addEventListener('click',()=>document.getElementById('ro').classList.remove('o'));document.getElementById('ry').addEventListener('click',()=>{document.getElementById('ro').classList.remove('o');pr={};localStorage.setItem('sekiroTrackerData',JSON.stringify(pr));all.forEach(({cb,it})=>{cb.checked=false;it.classList.remove('ck')});up()});const sb=document.getElementById('sb');window.addEventListener('scroll',()=>sb.classList.toggle('v',window.scrollY>500));sb.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));render();
+</script>
 </body>
 </html>
